@@ -1,8 +1,8 @@
 package br.com.kleryton.userapimicrosservicos.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import static lombok.EqualsAndHashCode.Include;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,9 +12,11 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = TB_USER)
-public class UserApplication {
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity(name = "TB_USER")
+public class User {
 
+    @Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
